@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Remote links-->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" />
+
+</head>
+<style>
+    body {
+        padding-top: 70px;
+        padding-bottom: 265px
+
+    }
+    .card > img {width:200px;
+                 height: auto
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand align-items-center" href="index.html"><img src="Imagens/logo.jpg" style="height:40px; width:auto" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Alimentaçao.html"><i class="fa fa-cutlery" aria-hidden="true"></i> Alimentação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fa fa-clock-o" aria-hidden="true"></i> Marcações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fa fa-stethoscope" aria-hidden="true"></i> Consultas</a>
+                    </li>
+                    <li class="nav-item dropdown d-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user"></i> <span class="drop_name">aaa</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href=""><i class="fa fa-paw" aria-hidden="true"></i> Ficha do animal</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="log_out()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a class="btn btn-primary log d-block" href="" role="button"><i class="fa fa-user" aria-hidden="true"></i> Sign up / Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="main">
+        <h2 class="text-danger d-none" id="redirect_warning"> Erro! Voçe precisa realizar login. <span id="redirect_time">3</span></h2>
+        <div class="container-fluid d-none" id="1">
+            <div id="Cão_div" class="d-none"> -->
+                <h3><i class="fa fa-paw"></i> Alimentação para cães:</h3>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/cao seca.jpg" class="card-img-top" alt="cao seca.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ração seca</h5>
+                                <p class="card-text">Ração seca para manter os dentes do animal <span class="pet_race"></span> limpos.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Ração_seca">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/cao humida.jpg" class="card-img-top" alt="cao humida.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ração húmida</h5>
+                                <p class="card-text">Ração húmida com molho para manter o seu <span class="pet_race"></span> hidratado.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Ração_húmida">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Gato_div" class="d-none">
+                <h3><i class="fa fa-paw"></i> Alimentação para gatos:</h3>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/gatos regular.jpg" class="card-img-top" alt="gatos regular.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ração seca</h5>
+                                <p class="card-text">Ração seca para manter os dentes do seu animal <span class="pet_race"></span> limpos.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Ração_seca">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/gatos humida.jpg" class="card-img-top" alt="gatos humida.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ração húmida</h5>
+                                <p class="card-text">Ração húmida com molho para manter o seu <span class="pet_race"></span> hidratado.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Ração_húmida">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/gatos esterilizados .jpg" id="big" class="card-img-top" alt="gatos esterilizados.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ração para gatos esterilizados</h5>
+                                <p class="card-text">Os gatos esterilizados necessitam de alimentação especial, por isso oferecemos ração especializada para <span class="pet_race"></span>s esterilizados.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Ração_para_gatos_esterilizados">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Pássaro_div" class="d-none">
+                <h3><i class="fa fa-paw"></i> Alimentação para pássaros:</h3>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/passaro especial.jpg" class="card-img-top" alt="pssaro especial.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ração para pássaros</h5>
+                                <p class="card-text">Comida especializada para <span class="pet_race"></span>s.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Regular">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Peixe_div" class="d-none">
+                <h3><i class="fa fa-paw"></i> Alimentação para peixes:</h3>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="Imagens/peixe.jpg" class="card-img-top" alt="peixe.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">Comida para peixes</h5>
+                                <p class="card-text">Comida especializada para <span class="pet_race"></span>s.</p>
+                                <button type="button" class="btn btn-primary aderir" value="Regular">Aderir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- End of Work Area -->
+    <nav class="navbar navbar-dark bg-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy; MAS- 2022/23</div>
+            <div class="navbar-text">Made By <i class="fa far fa-user text-normal"></i> <a href="mailto:Grupo 1" class="text-decoration-none text-muted">Grupo 1</a>.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+
+
+
+   <!--Remote links-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+   <script src="Alimentaçao.js">
+        $("a").hover(function () { $(this).animate({ margin: -1, width: "+=2", height: "+=2" }); }, function () { $(this).animate({ margin: 0, width: "-=2", height: "-=2" }); })
+        $(".aderir").hover(function () { $(this).animate({ margin: -3, width: "+=6", height: "+=6" }); }, function () { $(this).animate({ margin: 0, width: "-=6", height: "-=6" }); })
+        $(".card-img-top").hover(function () { $(this).animate({ margin: -5, width: "+=10", height: "+=10" }); }, function () { $(this).animate({ margin: 0, width: "-=10", height: "-=10" }); })
+    </script>
+    
+</body>
+</html>

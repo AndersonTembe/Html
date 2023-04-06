@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora ITW</title>
+    
+  
+</head>
+<body>
+    <div class="container">
+        <div class="border-bottom pt-4 pb-2 mb-3">
+          <h2>Calculadora</h2>
+        </div>
+  
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-xs-12 justify-content-center">
+            <div class="card">
+              <div class="card-header"><h2 id="res">0</h2></div>
+              <div class="card-body">
+
+                <div class="row mb-1">
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="1"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="2"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="3"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="+"onclick="addOperation()"/></div>
+                </div>
+
+                <div class="row mb-1">
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="4"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="5"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="6"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="-"onclick="addOperation()"/></div>
+                </div>
+
+                <div class="row mb-1">
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="7"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="8"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="9"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla" value="*"onclick="addOperation()"/></div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-3"><input class="form-control btn tecla btn-danger btn-lg"value="C"onclick="clearResult()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="0"onclick="addNumber()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-primary btn-lg tecla"value="="onclick="calculate()"/></div>
+                  <div class="col-sm-3"><input class="form-control btn btn-secondary btn-lg tecla"value="/"onclick="addOperation()"/></div>
+                </div>
+              </div>
+
+            </script>
+            <script src="Ex01.html"></script>
+</body>
+</html>

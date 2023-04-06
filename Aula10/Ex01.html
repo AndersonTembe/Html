@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <select id="citySelector" class="form-select">
+            <option value="">Select a city name</option>
+            <option value="Aveiro, PT">Aveiro</option>
+            <option value="Porto, PT">Porto</option>
+            <option value="Paris, FR">Paris</option>
+            <option value="London, UK">Londres</option>
+            <option value="New York, USA">Nova Iorque</option>
+            <option value="Maputo, Mz">Maputo</option>
+            <option value="Qatar, Qa">Qatar</option>
+            
+        </select>
+        <table class="table table-striped d-none">
+            <tr><td class="col-xs-2">City Name:</td><td class="col-xs-10" id="cityName"></td></tr>
+            <tr><td class="col-xs-2">Coordinates:</td><td class="col-xs-10" id="coordinates"></td></tr>
+            <tr><td class="col-xs-2">weather:</td><td class="col-xs-10" id="weather"></td></tr>
+            <tr><td class="col-xs-2">temp:</td><td class="col-xs-10" id="temp"></td></tr>
+            <tr><td class="col-xs-2">pressure:</td><td class="col-xs-10" id="pressure"></td></tr>
+            <tr>
+                <td class="col-xs-2">Dados recolhidos</td>
+                <td class="col-xs-10"><pre id="allData"></pre></td>
+            </tr>
+        </table>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <script>
+            $(document).ready(function () {
+                $("#citySelector").change(function () {
+                    $.ajax({
+                        url: "http://api.openweathermap.org/data/2.5/weather",
+                        data: {
+                            q: $("#citySelector").val(),
+                            APPID: 'b2b1df463182c3cca5276e9d3267cc95'
+                        },
+                        success: function (data) {
+                            if (data.name) {
+                                $('table').removeClass('d-none');
+                                $("#cityName").html(data.name + ' / ' + data.sys.country);
+                                $("#coordinates").html('Lon (º): ' + data.coord.lon + ' / Lat (º):' + data.coord.lat);
+                                $("#weather").html('<img src=" http://openweathermap.org/img/w/' + data.weather[0].icon + '.png"/>' + data.weather[0].description);
+                                $("#temp").html(data.main.temp.toString() + 'ºK / ' + (data.main.temp - 273.15).toString() + 'ºC');
+                                $("#pressure").html(data.main.pressure);
+                                $("#allData").html(JSON.stringify(data, null, 4).replace(/\n/g, "<br>"));
+                            }
+                            else {
+                                $('table').addClass('d-none');
+                                alert(data.message);
+                            }
+                        },
+                        error: function () {
+                            $('table').addClass('d-none');
+                            alert('Erro!');
+                        }
+                    });
+                });
+            });
+        </script>
+
+    </div>
+
+    
+</body>
+</html>

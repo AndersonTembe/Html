@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>knockout Exemplo with</title>
+<link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<h1 data-bind="text: city"> </h1>
+<p data-bind="with: coord">
+Latitude(º): <span data-bind="text: lat"> </span>,
+Longitude(º): <span data-bind="text: lon"> </span>
+</p>
+<script src="../lib/knockout/dist/knockout-latest.min.js"></script>
+<script>
+ko.applyBindings({
+city: "London",
+coord: {
+lat: 51.5001524,
+lon: -0.1262362
+}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body, input, select, textarea {font-family: 'Open Sans' , Tahoma, Verdana, Geneva, Tahoma, sans-serif;}
+.menutop{background-color: blue}
+.content{background-color: pink ; float: left ; width: 80% ; min-height: 400px; margin: auto; }
+.ads{background-color: yellow ; float: left; width: 20% ; min-height: 400px ;}
+.footer{background-color: greenyellow ; clear: left; min-height: 20px ;}
+ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; }
+li { float: left; border-right: 1px solid #bbb; }
+li:last-child { border-right: none; float: right; }
+li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+li a:hover:not(.active) { background-color: #444; }
+li a.active:hover { color: #444; }
+.active { background-color: #5CAF50; }
+.banner {
+    height: 600px;
+    margin: auto;
+    background-image: url('https://www.pngonly.com/wp-content/uploads/2018/11/hd-avengers-png-10203.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.margens{width: 960px; margin: auto;}
